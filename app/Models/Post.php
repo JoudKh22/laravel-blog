@@ -8,5 +8,13 @@ use Usamamuneerchaudhary\Commentify\Traits\Commentable;
 class Post extends Model
 {
         use Commentable;
+        
+        protected $fillable = [
+    'title',
+    'description',
+    'image',
+    'user_id', // veya created_by
+];
+
 
 }

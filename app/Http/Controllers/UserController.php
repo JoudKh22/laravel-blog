@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Models\Project;
 
 class UserController extends Controller
 {
@@ -32,6 +33,11 @@ public function index(Request $request){
     else{
         return redirect()->route('dashboard');
     }
+}
+public function showProjects()
+{
+    $projects = Project::latest()->get();
+    return view('projects', compact('projects'));
 }
 
 }
